@@ -1,0 +1,30 @@
+.button {
+  align-items: center;
+  background-color: unset;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  min-height: 40px;
+  padding: 8px 12px;
+  width: fit-content;
+
+  &__primary {
+    background: var(--color-button-primary);
+    color: var(--color-button-secondary);
+    border-color: var(--color-color-primary);
+  }
+
+  &__text {
+    background: transparent;
+    color: var(--color-button-primary);
+    border-color: transparent;
+  }
+
+  &__outline {
+    background: transparent;
+    color: var(--color-button-primary);
+    border-color: var(--color-button-primary);
+  }
+}

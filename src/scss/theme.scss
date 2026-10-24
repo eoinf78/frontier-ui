@@ -1,0 +1,66 @@
+:root {
+  --color-primary: #2a3d45;
+  --color-black: #2d2d2d;
+  --color-white: #fdfdfd;
+  --color-coyote: #7a6c5d;
+  --color-khaki: #bcac9b;
+  --color-platinum: #e3e3e3;
+  --color-old-rose: #c17c74;
+
+  // Base icon colors
+  --color-icon-primary: var(--color-primary);
+  --color-icon-secondary: var(--color-white);
+  --color-icon-rose: var(--color-old-rose);
+
+  // Base border colors
+  --color-border-primary: var(--color-primary);
+  --color-border-secondary: var(--color-white);
+
+  // Base button colors
+  --color-button-primary: var(--color-primary);
+  --color-button-secondary: var(--color-white);
+
+  // Spacing
+  --size-xs: 8px;
+  --size-sm: 12px;
+  --size-md: 16px;
+  --size-lg: 24px;
+  --size-xl: 32px;
+
+  // Icon sizes
+  --icon-sm: 16px;
+  --icon-md: 24px;
+  --icon-lg: 32px;
+  --icon-xl: 40px;
+
+  // Font sizes
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.75rem;
+  --font-size-4xl: 2rem;
+}
+
+html.--dark {
+  &:root {
+    // Icon colors
+    --color-icon-primary: var(--color-white);
+    --color-icon-secondary: var(--color-primary);
+
+    // Border colors
+    --color-border-primary: var(--color-white);
+    --color-border-secondary: var(--color-primary);
+
+    // button colors
+    --color-button-primary: var(--color-white);
+    --color-button-secondary: var(--color-primary);
+  }
+
+  body {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+}
