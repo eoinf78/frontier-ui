@@ -1,11 +1,11 @@
 import styles from './button.module.scss';
-import { Slot, type AsChildProps } from '../slot';
-import { FC } from 'react'
+import { Slot, type AsChildProps } from '@/components/slot/slot';
+import { FC, ButtonHTMLAttributes } from 'react'
 import clsx from 'clsx';
 import { ICON_MAP } from '../icon/base';
 import { Icon } from '../icon';
 
-type ButtonProps = AsChildProps<React.ButtonHTMLAttributes<HTMLButtonElement>> & {
+type ButtonProps = AsChildProps<ButtonHTMLAttributes<HTMLButtonElement>> & {
   variant?: 'primary' | 'text' | 'outline';
   size?: 'small' | 'medium' | 'large';
   className?: string;
@@ -21,17 +21,22 @@ export const Button: FC<ButtonProps> = ({
 }) => {
   const Comp = asChild ? Slot : "button"
   
-  return <Comp {...props} className={
-    clsx(
-      `${styles.button}`, 
-      props.className,
-      variant === 'primary' && styles.button__primary,
-      variant === 'text' && styles.button__text,
-      variant === 'outline' && styles.button__outline
-    )} 
-    type='button'
-  >
+  const className = clsx(
+    `${styles.button}`,
+    props.className,
+    variant === 'primary' && styles.button__primary,
+    variant === 'text' && styles.button__text,
+    variant === 'outline' && styles.button__outline
+  );
+
+  if (asChild) {
+    return <Slot {...props} className={className}>
+      {props.children}
+    </Slot>
+  }
+
+  return <button {...props} className={className} type='button'>
     {icon && <Icon name={icon} size="small"/>}
     {props.children}
-  </Comp>
+  </button>
 };

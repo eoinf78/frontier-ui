@@ -1,23 +1,26 @@
 import { Children, cloneElement, HTMLAttributes, isValidElement } from "react";
 
+import type { CSSProperties, ReactNode } from 'react';
+
 export type AsChildProps<DefaultElementProps> =
   | ({ asChild?: false } & DefaultElementProps)
-  | { asChild: true; children: React.ReactNode }
+  | { asChild: true; children: ReactNode }
 
 
 export function Slot({
   children,
   ...props
 }: HTMLAttributes<HTMLElement> & {
-  children?: React.ReactNode
+  children?: ReactNode
 }) {
-  if (isValidElement(children)) {
+  if (isValidElement<Record<string, unknown>>(children)) {
+    const childProps = children.props as Record<string, unknown>;
     return cloneElement(children, {
       ...props,
-      ...children.props,
+      ...childProps,
       style: {
         ...props.style,
-        ...children.props.style,
+        ...(childProps.style as CSSProperties),
       },
       className: props.className
     })

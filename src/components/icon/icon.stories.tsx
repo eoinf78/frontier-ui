@@ -21,3 +21,16 @@ export const Primary: Story = {
     name: 'close'
   }
 };
+
+export const AllIcons: StoryObj = {
+  render: () => (
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, 100px)', gap: '16px', textAlign: 'center' }}>
+      {Object.keys(ICON_MAP).map((name) => (
+        <div key={name} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <Icon name={name as keyof typeof ICON_MAP} />
+          <span style={{ fontSize: '12px' }}>{name}</span>
+        </div>
+      ))}
+    </div>
+  ),
+};
