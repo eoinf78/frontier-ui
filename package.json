@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev": "vite",
     "start": "vite start",
     "build": "vite build",
     "storybook": "VITE_CONFIG_NATIVE_IGNORE_WARNING=true storybook dev -p 6006",
