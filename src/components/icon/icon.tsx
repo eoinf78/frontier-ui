@@ -13,6 +13,7 @@ interface IconProps {
   color?: 'primary' | 'secondary' | 'rose';
 }
 
+
 export const Icon: FC<IconProps> = ({name, size = 'medium', color}) => {
   return <span className={clsx(
     `${styles.icon}`, 

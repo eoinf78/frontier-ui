@@ -10,10 +10,18 @@
   padding: 8px 12px;
   width: fit-content;
 
+  &__large {
+    padding: 12px 18px;
+  }
+
   &__primary {
     background: var(--color-button-primary);
     color: var(--color-button-secondary);
     border-color: var(--color-color-primary);
+  }
+
+  &__small {
+    padding: 4px 8px;
   }
 
   &__text {

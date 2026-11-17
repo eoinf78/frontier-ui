@@ -1,9 +1,13 @@
-import { CloseIcon, HomeIcon } from '@/assets/icons';
+import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, CloseIcon, HomeIcon } from '@/assets/icons';
 import {FC} from 'react';
 
 export const ICON_MAP = {
   'home': HomeIcon,
-  'close': CloseIcon
+  'close': CloseIcon,
+  'chevron-down': ChevronDown,
+  'chevron-up': ChevronUp,
+  'chevron-left': ChevronLeft,
+  'chevron-right': ChevronRight
 }
 
 interface BaseIconProps {
